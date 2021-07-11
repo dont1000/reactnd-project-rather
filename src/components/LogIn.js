@@ -28,6 +28,7 @@ class Login extends Component {
   handleSubmit= (event) => {
     const { dispatch } = this.props;
     event.preventDefault();
+    console.log("handle siubmit")
     dispatch(addAuthedUser(this.state.option));
   }
 

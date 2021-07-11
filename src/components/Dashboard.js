@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PollQuestion from "../components/PollQuestion";
+import PollTeaser from "../components/PollTeaser";
 
 class Dashboard extends Component {
   state = { activeTab: "1" };
@@ -33,9 +33,9 @@ class Dashboard extends Component {
           </div>
         </div>
         {this.state.activeTab === "1" &&
-          answeredIds.map((pollId) => <PollQuestion id={pollId} />)}
+          answeredIds.map((pollId) => <PollTeaser id={pollId} />)}
         {this.state.activeTab === "2" &&
-          unanswerdIds.map((pollId) => <PollQuestion id={pollId} />)}
+          unanswerdIds.map((pollId) => <PollTeaser id={pollId} />)}
       </div>
     );
   }
