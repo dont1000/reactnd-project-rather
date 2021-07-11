@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute";
 
 
 import './App.css';
+import PollQuestion from './components/PollQuestion';
 
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
         <div className="Container">
           <PrivateRoute path="/" exact component={Dashboard} />
           <PrivateRoute path="/leaderboard" exact component={ScorePage} />
+          <PrivateRoute path="/questions/:id" exact component={PollQuestion} />
           <Route path="/login" component={Login} exact />
         </div>
       </Router>

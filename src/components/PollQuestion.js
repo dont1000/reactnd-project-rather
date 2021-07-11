@@ -10,9 +10,10 @@ class PollQuestion extends Component {
     const { author, answered, question } = this.props;
     return (
       <div>
+    
         <PollCard author={author} answered={answered}>
           <div>
-            {answered ? (
+            {!answered ? (
               <Question question={question} />
             ) : (
               <Result question={question} />
@@ -24,20 +25,20 @@ class PollQuestion extends Component {
   }
 }
 
-const mapToProp = ({ questions, users }) => {
-  const authedUser = "johndoe";
-  const id = "vthrdm985a262al8qx3do" // get from param;
+const mapToProp = ({ questions, users, authedUser },props) => {
+  const { id } = props.match.params;
   const question = questions[id];
   const author = users[question.author];
   
   const all = question.optionOne.votes.concat(question.optionTwo.votes)
-  const answered = all.includes(authedUser);
-
+  const answered = all.includes(authedUser.userName);
+ 
 
   return {
     author,
     answered,
     question, 
+    id
   };
 };
 export default connect(mapToProp)(PollQuestion);

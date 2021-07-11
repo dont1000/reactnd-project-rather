@@ -41,21 +41,21 @@ class Dashboard extends Component {
   }
 }
 
-function mapToProp({questions}){
-    const author = "johndoe";
-    const answeredIds = [];
-    const unanswerdIds = [];
+function mapToProp({ questions, authedUser }) {
 
-    Object.keys(questions).forEach((q) => {
-        questions[q].optionOne.votes.includes(author) ||
-        questions[q].optionTwo.votes.includes(author)
-          ? answeredIds.push(q)
-          : unanswerdIds.push(q);
-    })
-    return {
-        answeredIds,
-        unanswerdIds
-    }
+  const answeredIds = [];
+  const unanswerdIds = [];
+
+  Object.keys(questions).forEach((q) => {
+    questions[q].optionOne.votes.includes(authedUser.userName) ||
+    questions[q].optionTwo.votes.includes(authedUser.userName)
+      ? answeredIds.push(q)
+      : unanswerdIds.push(q);
+  });
+  return {
+    answeredIds,
+    unanswerdIds,
+  };
 }
 
 export default connect(mapToProp)(Dashboard);

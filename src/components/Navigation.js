@@ -48,7 +48,6 @@ render(){
 }
 function mapToProp({authedUser, users}) {
   const autheUserData = users[authedUser.userName];
-
   return { autheUserData };
 }
 export default connect(mapToProp)(Navigation)
