@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import NavAuthLink from "../components/NavAuthLink";
 import { removeAuthedUser } from "../actions/authedUser";
+import "./Navigation.scss";
 
 
 class Navigation extends React.Component {
@@ -22,20 +23,20 @@ render(){
         {autheUserData && (
           <nav className="menu">
             <ul>
-              <li>
+              <li className="menu__link">
                 <NavLink to="/" exact activeClassName="active">
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="menu__link">
                 <NavLink to="/leaderboard" exact activeClassName="active">
                   Leaderboard
                 </NavLink>
               </li>
-              <li>
+              <li className="menu__link menu__link--right">
                 <NavAuthLink user={autheUserData} />
               </li>
-              <li>
+              <li className="menu__link">
                 <div onClick={this.logout}>Logout</div>
               </li>
             </ul>
