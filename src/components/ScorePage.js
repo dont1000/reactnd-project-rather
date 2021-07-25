@@ -4,14 +4,19 @@ import { connect } from "react-redux";
 import ScoreCard from "../components/ScoreCard";
 
 class ScorePage extends Component {
-
+ 
 
   render() {
+    const colors = [
+      "gold",
+      "silver",
+      "bronze",
+    ];
     const { sortedUserList } = this.props;
     return (
       <div>
-        <div>{sortedUserList.map((user)=>{
-           return <ScoreCard user={user}></ScoreCard>;
+        <div>{sortedUserList.map((user,id)=>{
+           return <ScoreCard user={user} color={colors[id]}></ScoreCard>;
         })}
            </div>
       </div>

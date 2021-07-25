@@ -1,18 +1,23 @@
+import PollCard from "./PollCard";
+import "./ScoreCard.scss";
+const ScoreCard = ({ user, color }) => {
+  const questionsCount = user.questions.length;
+  const answersCount = Object.keys(user.answers).length;
+  return (
+    <div>
+      <PollCard author={user} color={`${color}`}>
+        <div>
+          <span className="head">Score</span>
+          <div>Answered Questions:{answersCount} </div>
+          <div>Created Questions: {questionsCount}</div>
 
-const ScoreCard = ({user}) => {
-         const questionsCount = user.questions.length;
-         const answersCount = Object.keys(user.answers).length;
-
-    return (
-      <div>
-        <div>name: {user.id}</div>
-        <div>questions: {questionsCount}</div>
-        <div>answers:{answersCount} </div>
-        <div>Score: {questionsCount + answersCount}</div>
-      </div>
-    );
-
-}
-
+          <div class={`scorecard__count ${color}`}>
+            <span>{questionsCount + answersCount}</span>
+          </div>
+        </div>
+      </PollCard>
+    </div>
+  );
+};
 
 export default ScoreCard;
