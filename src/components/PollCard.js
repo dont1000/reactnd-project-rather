@@ -1,11 +1,18 @@
+import "./PollCard.scss"
+import { ReactComponent as Dots } from "../assets/dots.svg";
 
+function PollCard({ author, answered, color, children }) {
 
-function PollCard({ author, answered, children }) {
+  const cardColor = color ? `pollCard--${color}` : "pollCard--green";
+
   return (
-    <div>
-      <h2>{answered ? `asked by  ${author.name} ` : `${author.name} asks`}</h2>
-      <img src={author.avatarURL} alt={author.name} />
-      <div>{children}</div>
+    <div className={`pollCard ${cardColor}`}>
+      <div className={`pollCard__author ${cardColor}`}>
+        {answered ? `asked by  ${author.name} ` : `${author.name} asks`}
+      </div>
+      <Dots className={`pollCard__deco--bg ${cardColor}`} />
+      <img className="avatar" src={author.avatarURL} alt={author.name} />
+      <div className="pollCard__content">{children}</div>
     </div>
   );
 }
