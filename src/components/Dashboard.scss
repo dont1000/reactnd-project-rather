@@ -1,0 +1,29 @@
+@import "../variables.module.scss";
+.tabnav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.tabnav__tab{
+    background:#fff;
+    color:#000;
+    font-size: 16px;
+    font-weight:600;
+    border-radius: 8px;
+    width:49%;
+    padding:5px 0;
+    text-align: center;
+    position:relative;
+    cursor:pointer;
+}
+
+.tabnav__tabMarker{
+   position: absolute;
+    background-color: #E6AA51;
+    width: 10px;
+    height: 10px;
+    top: -3px;
+    left: -3px;
+    border-radius: 10px;
+}    

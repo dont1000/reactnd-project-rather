@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PollTeaser from "../components/PollTeaser";
+import "./Dashboard.scss";
 
 class Dashboard extends Component {
   state = { activeTab: "1" };
@@ -18,18 +19,28 @@ class Dashboard extends Component {
       <div>
         <div className="tabnav">
           <div
-            className="tab"
+            className="tabnav__tab"
             data-tab="1"
             onClick={(event) => this.toggleNav(event)}
           >
-            answered
+            <div
+              className={`${
+                this.state.activeTab === "1" ? "tabnav__tabMarker" : ""
+              }`}
+            />
+            Answered
           </div>
           <div
-            className="tab"
+            className="tabnav__tab"
             data-tab="2"
             onClick={(event) => this.toggleNav(event)}
           >
-            unanswered
+            <div
+              className={`${
+                this.state.activeTab === "2" ? "tabnav__tabMarker" : ""
+              }`}
+            />
+            Unanswered
           </div>
         </div>
         {this.state.activeTab === "1" &&
@@ -45,13 +56,14 @@ function mapToProp({ questions, authedUser }) {
 
   const answeredIds = [];
   const unanswerdIds = [];
-
+ 
   Object.keys(questions).forEach((q) => {
     questions[q].optionOne.votes.includes(authedUser.userName) ||
     questions[q].optionTwo.votes.includes(authedUser.userName)
       ? answeredIds.push(q)
       : unanswerdIds.push(q);
   });
+  
   return {
     answeredIds,
     unanswerdIds,
