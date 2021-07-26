@@ -1,5 +1,5 @@
 import {RECEIVE_QUESTIONS} from '../actions/questions'
-import { ADD_USER_TO_QUESTION } from "../actions/questions";
+import { ADD_USER_TO_QUESTION, SAVE_QUESTION } from "../actions/questions";
 
 export const questions = ( state = {}, action) =>{
     switch (action.type) {
@@ -10,7 +10,7 @@ export const questions = ( state = {}, action) =>{
         };
 
       case ADD_USER_TO_QUESTION:
-        console.log("lewhf ", state[action.qid][action.answer]);
+      
         return {
           ...state,
           [action.qid]: {
@@ -18,12 +18,18 @@ export const questions = ( state = {}, action) =>{
             [action.answer]: {
               text: state[action.qid][action.answer].text,
               votes: [
-                ...state[action.qid][action.answer].votes, action.authedUser,
+                ...state[action.qid][action.answer].votes,
+                action.authedUser,
               ],
             },
           },
         };
-
+      case SAVE_QUESTION:
+        return{
+          ...state,
+          [action.question.id]: action.question,
+        
+        };
       default:
         return state;
     }

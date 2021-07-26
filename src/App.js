@@ -7,22 +7,25 @@ import ScorePage from "./components/ScorePage";
 import Login from "./components/Login";
 import Navigation from "./components/Navigation";
 import PrivateRoute from "./components/PrivateRoute";
+import AskAQuestion from "./components/AskAQuestion";
 
-
-import './App.css';
+import './App.scss';
 import PollQuestion from './components/PollQuestion';
 
 
 class App extends Component {
+ 
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
 
 
   render() {
+
     return (
       <Router>
         <Navigation />
+        <AskAQuestion />
         <div className="Container">
           <PrivateRoute path="/" exact component={Dashboard} />
           <PrivateRoute path="/leaderboard" exact component={ScorePage} />
