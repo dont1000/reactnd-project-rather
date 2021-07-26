@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addAuthedUser } from "../actions/authedUser";
+import "./Login.css";
 
 
 class Login extends Component {
@@ -21,7 +22,6 @@ class Login extends Component {
   ];
 
   handleChange = (event) => {
-    console.log("props: ", this.props);
     this.setState({ option: event.target.value });
   }
 
@@ -34,7 +34,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="logIn">
         <select value={this.state.value} onChange={this.handleChange}>
           <option value="">--Please choose an option--</option>
           {this.users.map((user) => (
