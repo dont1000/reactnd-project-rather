@@ -17,9 +17,8 @@ export function handleInitialData(){
 
 export function handleQuestionAnswer(answer) {
   return (dispatch, getState) => {
-    // const { authedUser } = getState();
-    const authedUser = "sarahedo";
-    const answerData = { authedUser: authedUser, ...answer };
+    const { authedUser } = getState();
+    const answerData = { authedUser: authedUser.userName, ...answer };
     return saveQuestionAnswer(answerData).then((e) => {
           dispatch(addUserToQuestion(answerData));
           dispatch(addQuestionToUser(answerData));

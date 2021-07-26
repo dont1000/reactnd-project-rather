@@ -7,7 +7,7 @@ import Result from "./Result";
 
 class PollQuestion extends Component {
   render() {
-    const { author, answered, question } = this.props;
+    const { author, answered, question, authedUser } = this.props;
     return (
       <div>
     
@@ -16,7 +16,7 @@ class PollQuestion extends Component {
             {!answered ? (
               <Question question={question} />
             ) : (
-              <Result question={question} />
+              <Result question={question} user={authedUser}/>
             )}
           </div>
         </PollCard>
@@ -27,17 +27,21 @@ class PollQuestion extends Component {
 
 const mapToProp = ({ questions, users, authedUser },props) => {
   const { id } = props.match.params;
+
   const question = questions[id];
+  
   const author = users[question.author];
   
   const all = question.optionOne.votes.concat(question.optionTwo.votes)
   const answered = all.includes(authedUser.userName);
+ 
  
 
   return {
     author,
     answered,
     question, 
+    authedUser,
     id
   };
 };
