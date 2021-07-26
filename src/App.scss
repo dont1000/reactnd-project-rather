@@ -22,9 +22,32 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+::placeholder {
+    color:rgba($color: #fff, $alpha: 0.4)
+}
+
 .Container{
     width:620px;
     margin:0 auto;
+}
+
+.button__cta{
+    position:absolute;
+    width:150px;
+    height:30px;
+    background-color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    color:#fff;
+    border:none;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.button__cta--staticCenter{
+    position:static !important;
+    display:block;
+    margin: 0 auto;
 }
 
 

@@ -25,8 +25,8 @@ class App extends Component {
     return (
       <Router>
         <Navigation />
-        <AskAQuestion />
         <div className="Container">
+          <AskAQuestion />
           <PrivateRoute path="/" exact component={Dashboard} />
           <PrivateRoute path="/leaderboard" exact component={ScorePage} />
           <PrivateRoute path="/questions/:id" exact component={PollQuestion} />

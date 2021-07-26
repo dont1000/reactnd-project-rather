@@ -29,12 +29,12 @@ export function saveYourQuestion(question) {
   }
 }
 
-export function handleSaveYourQuestion(question) {
+export function handleSaveYourQuestion(question, callback) {
   return (dispatch, getState) => {
     const { authedUser } = getState();
     const answerData = { author: authedUser.userName, ...question };
     return saveQuestion(answerData).then((e) => {
-      console.log("----------", e)
+      callback()
       dispatch(saveYourQuestion(e));
     });
   };
