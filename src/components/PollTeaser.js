@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PollCard from "./PollCard"
 
 
@@ -10,11 +10,11 @@ class PollTeaser extends Component {
     const { question, author, id } = this.props;
     return (
       <Link to={`/questions/${id}`} className="tweet">
-        <PollCard author={author} >
+        <PollCard author={author}>
           <div>
-            <h3>Would you rather</h3>
-            <p>{question.optionOne.text}</p>
-            <button>View Poll</button>
+            <span className="head">Would you rather</span>
+            <p className="question threeDots">{question.optionOne.text}</p>
+            <button className="button__cta">View Poll</button>
           </div>
         </PollCard>
       </Link>
