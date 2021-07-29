@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PollTeaser from "../components/PollTeaser";
+import AskAQuestion from "./AskAQuestion";
+
 import "./Dashboard.scss";
 
 class Dashboard extends Component {
@@ -17,36 +19,43 @@ class Dashboard extends Component {
     const { answeredIds, unanswerdIds } = this.props;
     return (
       <div>
-        <div className="tabnav">
-          <div
-            className="tabnav__tab"
-            data-tab="1"
-            onClick={(event) => this.toggleNav(event)}
-          >
+        <AskAQuestion />
+        <div>
+          <div className="tabnav">
             <div
-              className={`${
-                this.state.activeTab === "1" ? "tabnav__tabMarker" : ""
-              }`}
-            />
-            Answered
-          </div>
-          <div
-            className="tabnav__tab"
-            data-tab="2"
-            onClick={(event) => this.toggleNav(event)}
-          >
+              className="tabnav__tab"
+              data-tab="1"
+              onClick={(event) => this.toggleNav(event)}
+            >
+              <div
+                className={`${
+                  this.state.activeTab === "1" ? "tabnav__tabMarker" : ""
+                }`}
+              />
+              Answered
+            </div>
             <div
-              className={`${
-                this.state.activeTab === "2" ? "tabnav__tabMarker" : ""
-              }`}
-            />
-            Unanswered
+              className="tabnav__tab"
+              data-tab="2"
+              onClick={(event) => this.toggleNav(event)}
+            >
+              <div
+                className={`${
+                  this.state.activeTab === "2" ? "tabnav__tabMarker" : ""
+                }`}
+              />
+              Unanswered
+            </div>
           </div>
+          {this.state.activeTab === "1" &&
+            answeredIds.map((pollId, id) => (
+              <PollTeaser id={pollId} key={id} />
+            ))}
+          {this.state.activeTab === "2" &&
+            unanswerdIds.map((pollId, id) => (
+              <PollTeaser id={pollId} key={id} />
+            ))}
         </div>
-        {this.state.activeTab === "1" &&
-          answeredIds.map((pollId) => <PollTeaser id={pollId} />)}
-        {this.state.activeTab === "2" &&
-          unanswerdIds.map((pollId) => <PollTeaser id={pollId} />)}
       </div>
     );
   }

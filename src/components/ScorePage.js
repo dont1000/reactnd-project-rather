@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 //import { ScoreCard } from "../components/ScoreCard"
 import ScoreCard from "../components/ScoreCard";
+import AskAQuestion from "./AskAQuestion";
 
 class ScorePage extends Component {
  
@@ -15,10 +16,14 @@ class ScorePage extends Component {
     const { sortedUserList } = this.props;
     return (
       <div>
-        <div>{sortedUserList.map((user,id)=>{
-           return <ScoreCard user={user} color={colors[id]}></ScoreCard>;
-        })}
-           </div>
+        <AskAQuestion />
+        <div>
+          {sortedUserList.map((user, id) => {
+            return (
+              <ScoreCard user={user} key={id} color={colors[id]}></ScoreCard>
+            );
+          })}
+        </div>
       </div>
     );
   }
