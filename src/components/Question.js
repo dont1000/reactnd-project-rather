@@ -24,27 +24,26 @@ class Question extends Component{
           <div>
             <span className="head">Would you rather</span>
             <form onSubmit={this.onSubmit}>
-             
-                <input
-                  type="radio"
-                  id="optionOne"
-                  name="optionOne"
-                  value="optionOne"
-                  checked={this.state.option === "optionOne"}
-                  onChange={this.onChange}
-                />
-                <label for="optionOne">{question.optionOne.text}</label>
-            
-                <input
-                  type="radio"
-                  id="optionTwo"
-                  name="optionTwo"
-                  value="optionTwo"
-                  checked={this.state.option === "optionTwo"}
-                  onChange={this.onChange}
-                />
-                <label for="optionTwo">{question.optionTwo.text}</label>
-           
+              <input
+                type="radio"
+                id="optionOne"
+                name="optionOne"
+                value="optionOne"
+                checked={this.state.option === "optionOne"}
+                onChange={this.onChange}
+              />
+              <label htmlFor="optionOne">{question.optionOne.text}</label>
+
+              <input
+                type="radio"
+                id="optionTwo"
+                name="optionTwo"
+                value="optionTwo"
+                checked={this.state.option === "optionTwo"}
+                onChange={this.onChange}
+              />
+              <label htmlFor="optionTwo">{question.optionTwo.text}</label>
+
               <button className="button__cta" type="submit">
                 Submit
               </button>
