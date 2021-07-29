@@ -50,6 +50,22 @@ body{
     margin: 0 auto;
 }
 
+.button__cta__wrapper--right{
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+}
+.button__cta--static{
+    position: static !important;
+    display: block;
+    margin: 0;
+    padding: 4px 12px;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 10px;
+    width:auto;
+    height: auto;
+}
 
 /* Radio-Buttons */
 input[type="radio"] {
@@ -86,7 +102,35 @@ input[type="radio"]:checked + label:before {
     width:10px;
     height:10px;
     border:6px solid  $green-light;
- 
- 
+}
 
+.select__wrapper{
+    position:relative;
+    width:100%;
+    background: $blue;
+
+}
+
+.select__wrapper::after {
+    content: "<";
+    font-size: 20px;
+    position: absolute;
+    font-weight: 700;
+    right: 5px;
+    bottom:0;
+    top:0;
+    color:#fff;
+    transform: rotate(-90deg);
+}
+select {
+    width:100%;
+    appearance: none;
+    border: none;
+    background: $blue;
+    border-radius: 4px;
+    height: 35px;
+    padding-left: 10px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
