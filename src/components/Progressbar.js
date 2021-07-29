@@ -46,7 +46,7 @@ const Progressbar = ({result, total, width, hasMarker, children}) => {
             <div>{perc}%</div>
           </div>
         </div>
-        <div class="progessBar__values">
+        <div className="progessBar__values">
           {result} out of {total}
         </div>
         <div
@@ -54,8 +54,8 @@ const Progressbar = ({result, total, width, hasMarker, children}) => {
             hasMarker ? " progessBar__marker--show" : ""
           }`}
         >
-          <div class="progessBar__marker--marker"></div>
-          <div class="progessBar__marker--text">Your Choice!</div>
+          <div className="progessBar__marker--marker"></div>
+          <div className="progessBar__marker--text">Your Choice!</div>
         </div>
       </div>
     );
