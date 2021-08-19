@@ -32,7 +32,7 @@ class Dashboard extends Component {
                   this.state.activeTab === "1" ? "tabnav__tabMarker" : ""
                 }`}
               />
-              Answered
+              Unswered
             </div>
             <div
               className="tabnav__tab"
@@ -44,15 +44,15 @@ class Dashboard extends Component {
                   this.state.activeTab === "2" ? "tabnav__tabMarker" : ""
                 }`}
               />
-              Unanswered
+              Answered
             </div>
           </div>
           {this.state.activeTab === "1" &&
-            answeredIds.map((pollId, id) => (
+            unanswerdIds.map((pollId, id) => (
               <PollTeaser id={pollId} key={id} />
             ))}
           {this.state.activeTab === "2" &&
-            unanswerdIds.map((pollId, id) => (
+            answeredIds.map((pollId, id) => (
               <PollTeaser id={pollId} key={id} />
             ))}
         </div>
@@ -65,14 +65,18 @@ function mapToProp({ questions, authedUser }) {
 
   const answeredIds = [];
   const unanswerdIds = [];
+
+ const sortedQuestions=Object.values(questions).sort((a,b)=>{
+    return b.timestamp > a.timestamp
+ })
  
-  Object.keys(questions).forEach((q) => {
-    questions[q].optionOne.votes.includes(authedUser.userName) ||
-    questions[q].optionTwo.votes.includes(authedUser.userName)
-      ? answeredIds.push(q)
-      : unanswerdIds.push(q);
-  });
-  
+ sortedQuestions.forEach((question) => {
+  question.optionOne.votes.includes(authedUser.userName) ||
+  question.optionTwo.votes.includes(authedUser.userName)
+    ? answeredIds.push(question.id)
+    : unanswerdIds.push(question.id);
+ })
+
   return {
     answeredIds,
     unanswerdIds,
