@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, withRouter } from "react-router-dom";
-import Login from "../components/Login"
+import Login from "../views/Login"
 
 class PrivateRoute extends Component {
   render() {

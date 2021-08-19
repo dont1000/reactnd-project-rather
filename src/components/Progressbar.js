@@ -20,13 +20,13 @@ const Progressbar = ({result, total, width, hasMarker, children}) => {
      });
 
     React.useEffect(() => {
-        if (progress > 0) {
-          setProgress(0);
-        }
-        setTimeout(()=>{
-            setProgress((perc / 100) * width);
-        },20)
-    },[perc, width]);
+      if (progress > 0) {
+        setProgress(0);
+      }
+      setTimeout(() => {
+        setProgress((perc / 100) * width);
+      }, 20);
+    }, [perc, width, progress]);
   
     return (
       <div className="progessBar">

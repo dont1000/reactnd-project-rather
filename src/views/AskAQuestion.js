@@ -92,7 +92,7 @@ buttonClass = () => {
                 value={this.state.optionOneText}
                 onChange={this.onChange}
               />
-              <div class="ask__or">OR</div>
+              <div className="ask__or">OR</div>
               <input
                 type="text"
                 id="optionTwoText"

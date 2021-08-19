@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PollCard from "./PollCard"
-import Question from "./Question";
-import Result from "./Result";
+import PollCard from "../components/PollCard"
+import Question from "../components/Question";
+import Result from "../components/Result";
 import { Redirect} from "react-router-dom";
 import AskAQuestion from "./AskAQuestion";
 

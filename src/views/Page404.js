@@ -1,7 +1,7 @@
 
 
-import "./p404.scss"
-const p404=()=>{
+import "./Page404.scss"
+const Page404 =()=>{
     return(
         <div className="p404">
            <div className="head">This question doesn't exist. </div>   
@@ -9,4 +9,4 @@ const p404=()=>{
     )
 }
 
-export default p404
+export default Page404;

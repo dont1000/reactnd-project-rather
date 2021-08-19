@@ -4,15 +4,10 @@ import { connect } from "react-redux";
 import ScoreCard from "../components/ScoreCard";
 import AskAQuestion from "./AskAQuestion";
 
-class ScorePage extends Component {
- 
 
+class Leaderboard extends Component {
   render() {
-    const colors = [
-      "gold",
-      "silver",
-      "bronze",
-    ];
+    const colors = ["gold", "silver", "bronze"];
     const { sortedUserList } = this.props;
     return (
       <div>
@@ -20,7 +15,11 @@ class ScorePage extends Component {
         <div>
           {sortedUserList.map((user, id) => {
             return (
-              <ScoreCard user={user} key={id} color={colors[id]}></ScoreCard>
+              <ScoreCard
+                user={user}
+                key={id}
+                color={id < 3 ? colors[id] : "grey"}
+              ></ScoreCard>
             );
           })}
         </div>
@@ -40,4 +39,4 @@ const mapToProp = ({ users }) =>{
   };
 }
 
-export default connect(mapToProp)(ScorePage);
+export default connect(mapToProp)(Leaderboard);
