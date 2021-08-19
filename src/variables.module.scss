@@ -11,7 +11,8 @@ $silver:#C9C9C9;
 $silver-light:#DFDFDF;
 
 $bronze:#C49043;
-$bronze-light:#E6AA51;
+$bronze-light:#E6AA51;  
+$red: #C44343;
 
 
 :export{
@@ -19,4 +20,5 @@ $bronze-light:#E6AA51;
     green-light: $green-light;
     orange-light: $orange-light;
     gold: $gold;
+    red: $red;
 }

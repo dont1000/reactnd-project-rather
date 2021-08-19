@@ -1,0 +1,23 @@
+@import "../variables.module.scss";
+
+.logIn__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+    background-color: $blue;
+    padding: 40px 0;
+    border-radius: 10px;;
+}
+
+.logIn {
+    width: 240px;
+    margin: 30px auto;
+    .button__cta--static{
+        width:240px;
+        width: 100%;
+        height: 32px;
+        margin-top: 20px;
+    }
+   
+}

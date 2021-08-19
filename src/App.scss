@@ -42,6 +42,7 @@ body{
     border:none;
     border-radius: 8px;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .button__cta--staticCenter{
@@ -121,6 +122,8 @@ input[type="radio"]:checked + label:before {
     top:0;
     color:#fff;
     transform: rotate(-90deg);
+    pointer-events: none;
+   
 }
 select {
     width:100%;
@@ -133,4 +136,33 @@ select {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    outline: none;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+     cursor: pointer;
 }
+
+
+.logo__circle__wrapper{
+    display:flex;
+    justify-content: center;
+    div{
+        color:#fff;
+        font-weight:600;
+    }
+}
+
+.logo__circle{
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    margin-left:5px;
+  
+}
+
+.logo__circle--red{
+    background: $red;
+}
+.logo__circle--green{
+    background: $green;
+}
+
