@@ -1,4 +1,4 @@
-# MyReads Project
+# Would you rather than Project
 
 This is the final assessment project for Udacity's React & Redux course.
 
@@ -23,23 +23,21 @@ Clone the repository and install the dependencies
 * start the development server with `npm start`
 * the server runs on http://localhost:3000
 
-### Search
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms. The Seacrch Terms can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md)
 
 
 ## Screen Shots
 
 ### Screenshot 1
 
-![alt text](https://raw.githubusercontent.com/dont1000/reactnd-project-rather/master/docs/image/screenshot1_1.jpg "home")
+![alt text](https://raw.githubusercontent.com/dont1000/reactnd-project-rather/master/docs/image/screenshot_1.jpg "home")
 
 ### Screenshot 2
 
-![alt text](https://raw.githubusercontent.com/dont1000/reactnd-project-rather/master/docs/image/screenshot2_v2.jpg "create question")
+![alt text](https://raw.githubusercontent.com/dont1000/reactnd-project-rather/master/docs/image/screenshot_2.jpg "create question")
 
 ### Screenshot 3
 
-![alt text](https://raw.githubusercontent.com/dont1000/reactnd-project-rather/master/docs/image/screenshot2_v2.jpg "leaderboard")
+![alt text](https://raw.githubusercontent.com/dont1000/reactnd-project-rather/master/docs/image/screenshot_3.jpg "leaderboard")
 
 
 
