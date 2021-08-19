@@ -21,26 +21,32 @@ render(){
     return (
       <Fragment>
         {autheUserData && (
-          <nav className="menu">
-            <ul>
-              <li className="menu__link">
-                <NavLink to="/" exact activeClassName="active">
-                  Home
-                </NavLink>
-              </li>
-              <li className="menu__link">
-                <NavLink to="/leaderboard" exact activeClassName="active">
-                  Leaderboard
-                </NavLink>
-              </li>
-              <li className="menu__link menu__link--right">
-                <NavAuthLink user={autheUserData} />
-              </li>
-              <li className="menu__link">
-                <div onClick={this.logout}>Logout</div>
-              </li>
-            </ul>
-          </nav>
+          <div className="menu">
+            <div className="logo__circle__wrapper logo__menu">
+              <div className="logo__circle logo__circle--red" />
+              <div className="logo__circle logo__circle--green" />
+            </div>
+            <nav>
+              <ul>
+                <li className="menu__link">
+                  <NavLink to="/" exact activeClassName="active">
+                    Home
+                  </NavLink>
+                </li>
+                <li className="menu__link">
+                  <NavLink to="/leaderboard" exact activeClassName="active">
+                    Leaderboard
+                  </NavLink>
+                </li>
+                <li className="menu__link menu__link--right">
+                  <NavAuthLink user={autheUserData} />
+                </li>
+                <li className="menu__link">
+                  <div onClick={this.logout}>Logout</div>
+                </li>
+              </ul>
+            </nav>
+          </div>
         )}
       </Fragment>
     );
