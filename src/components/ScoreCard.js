@@ -6,7 +6,6 @@ const ScoreCard = ({ user, color }) => {
      console.log(user);
   return (
     <div>
-   
       <PollCard author={user} color={`${color}`} head={user.name}>
         <div>
           <span className="head">Score</span>
@@ -14,7 +13,8 @@ const ScoreCard = ({ user, color }) => {
           <div>Created Questions: {questionsCount}</div>
 
           <div className={`scorecard__count ${color}`}>
-            <span>{questionsCount + answersCount}</span>
+            <span>{questionsCount + answersCount} </span>
+            <span className="scorecard__points">points</span>
           </div>
         </div>
       </PollCard>

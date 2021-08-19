@@ -11,9 +11,15 @@
     width:190px;
     height:190px;
     margin-left: 180px;
+    display: flex;
+    justify-content: center;
     span{
         padding-top: 23px;
         display: block;
+    }
+    .scorecard__points{
+        font-size: 12px;
+        line-height: 86px;
     }
 }
 
