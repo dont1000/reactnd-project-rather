@@ -38,6 +38,11 @@ render(){
                     Leaderboard
                   </NavLink>
                 </li>
+                <li className="menu__link">
+                  <NavLink to="/add" exact activeClassName="active">
+                    Create a Question
+                  </NavLink>
+                </li>
                 <li className="menu__link menu__link--right">
                   <NavAuthLink user={autheUserData} />
                 </li>
