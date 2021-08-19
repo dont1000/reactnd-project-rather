@@ -52,7 +52,7 @@ class Login extends Component {
               ))}
             </select>
           </div>
-          <div class="button__cta__wrapper--right">
+          <div className="button__cta__wrapper--right">
             <button
               className="button__cta button__cta--static"
               onClick={this.handleSubmit}
