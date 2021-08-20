@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-//import { ScoreCard } from "../components/ScoreCard"
 import ScoreCard from "../components/ScoreCard";
 import AskAQuestion from "./AskAQuestion";
 
@@ -18,7 +17,7 @@ class Leaderboard extends Component {
               <ScoreCard
                 user={user}
                 key={id}
-                color={id < 3 ? colors[id] : "grey"}
+                color={id < 3 ? colors[id] : "green"}
               ></ScoreCard>
             );
           })}
