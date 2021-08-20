@@ -3,7 +3,6 @@ import "./ScoreCard.scss";
 const ScoreCard = ({ user, color }) => {
   const questionsCount = user.questions.length;
   const answersCount = Object.keys(user.answers).length;
-     console.log(user);
   return (
     <div>
       <PollCard author={user} color={`${color}`} head={user.name}>
