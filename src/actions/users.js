@@ -1,5 +1,6 @@
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const ADD_QUESTION_TO_USER = "ADD_QUESTION_TO_USER";
+export const SAVE_YOUR_QUESTION_USER = "SAVE_YOUR_QUESTION_USER";
 ;
 
 export function receiveUsers(users){
@@ -15,5 +16,13 @@ export function addQuestionToUser({ qid, answer, authedUser }) {
     qid,
     answer,
     authedUser,
+  };
+}
+
+export function saveYourQuestionUser({id, author}) {
+  return {
+    type: SAVE_YOUR_QUESTION_USER,
+    id,
+    author
   };
 }

@@ -1,4 +1,8 @@
-import { RECEIVE_USERS, ADD_QUESTION_TO_USER } from "../actions/users";
+import {
+  RECEIVE_USERS,
+  ADD_QUESTION_TO_USER,
+  SAVE_YOUR_QUESTION_USER,
+} from "../actions/users";
 
 
 export const users = (state = {}, action) => {
@@ -17,6 +21,16 @@ export const users = (state = {}, action) => {
           [action.authedUser]: {
             ...state[action.authedUser],
             answers
+          }
+        };
+
+      case SAVE_YOUR_QUESTION_USER:
+        const {author, id} = action
+        return {
+          ...state,
+          [author]: {
+            ...state[author],
+            questions: [ ...state[author].questions, id ]
           }
         };
 

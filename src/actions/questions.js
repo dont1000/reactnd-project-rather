@@ -1,6 +1,3 @@
-
-import { saveQuestion } from "../utils/api";
-
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const ADD_USER_TO_QUESTION = "ADD_USER_TO_QUESTION";
 export const SAVE_QUESTION ="SAVE_QUESTION"
@@ -27,15 +24,4 @@ export function saveYourQuestion(question) {
     type: SAVE_QUESTION,
     question
   }
-}
-
-export function handleSaveYourQuestion(question, callback) {
-  return (dispatch, getState) => {
-    const { authedUser } = getState();
-    const answerData = { author: authedUser.userName, ...question };
-    return saveQuestion(answerData).then((e) => {
-      callback()
-      dispatch(saveYourQuestion(e));
-    });
-  };
 }

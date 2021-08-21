@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { handleSaveYourQuestion } from "../actions/questions";
+import { handleSaveYourQuestion } from "../actions/shared";
 import { withRouter } from "react-router";
 import "./AskAQuestion.scss";
 
