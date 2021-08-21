@@ -67,7 +67,7 @@ function mapToProp({ questions, authedUser }) {
   const unanswerdIds = [];
 
  const sortedQuestions=Object.values(questions).sort((a,b)=>{
-    return b.timestamp > a.timestamp
+    return b.timestamp - a.timestamp
  })
  
  sortedQuestions.forEach((question) => {
