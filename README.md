@@ -23,7 +23,9 @@ Clone the repository and install the dependencies
 * start the development server with `npm start`
 * the server runs on http://localhost:3000
 
+## Contributors
 
+[@dont1000](https://github.com/dont1000)
 
 ## Screen Shots
 
